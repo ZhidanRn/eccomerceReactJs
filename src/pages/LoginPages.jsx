@@ -2,8 +2,8 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 
 export default function LoginPages() {
-    const [users, setUsers] = useState()
-    const [password, setPassword] = useState()
+    const [users, setUsers] = useState('')
+    const [password, setPassword] = useState('')
 
     const onChangeUser = (e) => {
         setUsers(e.target.value)
@@ -21,6 +21,8 @@ export default function LoginPages() {
         if (user && user.password === password) {
             alert(`Login Seccesful`)
             window.location.href = '/'
+        } else if(users == '' || password == ''){
+            alert('Please input data')
         } else {
             alert('Login Failed, Make sure your username and password correct')
         }
@@ -35,10 +37,10 @@ export default function LoginPages() {
             
                         <form>
                             <div className="px-4 pb-2 text-xs">Username</div>
-                            <input type="text" id="loginUser" placeholder="Enter Username" className="bg-gray-100 w-full border rounded py-2 px-4 text-sm" value={users} onChange={onChangeUser} required />
+                            <input type="text" id="loginUser" placeholder="Enter Username" className="bg-gray-100 w-full border rounded py-2 px-4 text-sm" value={users} onChange={onChangeUser} />
 
                             <div className=" px-4 pt-4 pb-2 text-xs">Password</div>
-                            <input type="password" id="loginPass" placeholder="Enter Password" className="bg-gray-100 w-full border rounded py-2 px-4 text-sm" value={password} onChange={onChangePass} required />
+                            <input type="password" id="loginPass" placeholder="Enter Password" className="bg-gray-100 w-full border rounded py-2 px-4 text-sm" value={password} onChange={onChangePass} />
 
                             <div className="text-right text-xs text-blue-600 pt-3 pb-10"><a href="#">Forgot Password?</a></div>
                             <button type="button" className="border w-full bg-[#8053FF] rounded-lg py-2 cursor-pointer text-slate-100 font-medium" onClick={onClickLogin}>Sign In</button>
