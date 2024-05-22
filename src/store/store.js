@@ -1,40 +1,40 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { thunk } from "redux-thunk";
 import productSlice from "./reducer/productSlice";
-import { cartReducer } from "./reducer/cartReducer";
+import cartSlice from "./reducer/cartSlice";
 
 const rootReducer = combineReducers({
   products: productSlice,
-  cart: cartReducer
-})
+  cart: cartSlice,
+});
 
 const loadState = () => {
-  try{
-    const serializedState = localStorage.getItem('cartState')
-    if( serializedState === null){
-      return undefined
+  try {
+    const serializedState = localStorage.getItem("cartState");
+    if (serializedState === null) {
+      return undefined;
     }
-    return JSON.parse(serializedState)
-  } catch(error){
-    return undefined
+    return JSON.parse(serializedState);
+  } catch (error) {
+    return undefined;
   }
-}
+};
 
 const saveState = (state) => {
-  try{
-    const serializedState =JSON.stringify(state)
-    localStorage.setItem('cartState', serializedState)
-  } catch(error){
-    console.error(error)
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem("cartState", serializedState);
+  } catch (error) {
+    console.error(error);
   }
-}
+};
 
-const persistedState = loadState() 
+const persistedState = loadState();
 
-const store = createStore(rootReducer, persistedState, applyMiddleware(thunk))
+const store = createStore(rootReducer, persistedState, applyMiddleware(thunk));
 
 store.subscribe(() => {
-  saveState(store.getState())
-})
+  saveState(store.getState());
+});
 
-export default store
+export default store;

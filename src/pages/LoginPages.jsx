@@ -19,7 +19,7 @@ export default function LoginPages() {
         const user = dataParsed.find(user => user.username === users)
 
         if (user && user.password === password) {
-            alert(`Login Seccesful`)
+            alert(`Login Succesful`)
             window.location.href = '/'
         } else if(users == '' || password == ''){
             alert('Please input data')

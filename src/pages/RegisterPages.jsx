@@ -33,7 +33,7 @@ export default function RegisterPages(){
         } else {
             data.push({ username: users, password: password})
             localStorage.setItem('users', JSON.stringify(data))
-            alert('Registration Seccesfull, Please Login')
+            alert('Registration Succesfull, Please Login')
             window.location.href = 'login'
         }
     }
