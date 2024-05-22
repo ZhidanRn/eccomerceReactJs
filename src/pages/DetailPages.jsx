@@ -54,7 +54,7 @@ export default function DetailPages() {
       <main className=" mx-auto overflow-hidden p-6">
         <div
           id="show"
-          className="flex-row lg:flex items-center justify-center tracking-wide"
+          className="flex-row lg:flex items-center justify-center tracking-wide mt-10"
         >
           <div
             id="img"

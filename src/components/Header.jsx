@@ -83,13 +83,9 @@ export default function Header({ categoryVal, searchRes, }){
     return(
         <>
             <header>
-                <div id="searchBar" className={`text-center bg-white w-full absolute ${searchBar}`}>
-                    <input type="search" id="searchInput" placeholder="Search" className=" p-2 my-5 border border-black w-1/2 rounded-md" defaultValue={searchVal} onChange={onChangeSearch} />
-                    <i onClick={onClickSearch} className="fa-solid fa-magnifying-glass mx-2 text-2xl cursor-pointer transition-transform hover:scale-110"></i>
-                    <i onClick={closeSearchBar} className="fa-solid fa-xmark text-2xl transition-transform hover:scale-110 cursor-pointer"></i>
-                </div>
 
-                <nav className="border flex flex-row w-full shadow-sm p-2 items-center justify-center">
+
+                <nav className="fixed border flex flex-row w-full shadow-sm p-2 items-center justify-center bg-white">
                     <div className="relative inline-block text-left px-6">
                         <button onClick={showMenu} type="button" className="inline-flex items-center justify-center px-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md focus:outline-none focus:border-blue-300 focus:ring focus:ring-blue-200 active:bg-gray-100 active:border-gray-200">
                             <i className="fa-solid fa-bars text-2xl "></i>
@@ -139,7 +135,11 @@ export default function Header({ categoryVal, searchRes, }){
                         <Cart show={viewCart} /> 
                     </div>
                 </nav>
-
+                <div id="searchBar" className={`text-center bg-white w-full fixed ${searchBar}`}>
+                    <input type="search" id="searchInput" placeholder="Search" className=" p-2 my-5 border border-black w-1/2 rounded-md" defaultValue={searchVal} onChange={onChangeSearch} />
+                    <i onClick={onClickSearch} className="fa-solid fa-magnifying-glass mx-2 text-2xl cursor-pointer transition-transform hover:scale-110"></i>
+                    <i onClick={closeSearchBar} className="fa-solid fa-xmark text-2xl transition-transform hover:scale-110 cursor-pointer"></i>
+                </div>
             </header>
         </>
     )

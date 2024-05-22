@@ -1,11 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { decreaseQuantity, increaseQuantity, removeFromCart } from "../store/reducer/cartSlice";
-import { useNavigate } from "react-router-dom";
 
 export const Cart = ({ show }) => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
-  const navigate = useNavigate()
   const totalPrice = (items) => {
     let total = 0;
 
@@ -92,7 +90,7 @@ export const Cart = ({ show }) => {
         </div>
         <div className="my-auto"></div>
         <hr />
-          <div className="p-8">
+          <div className="p-8 bg-white">
             <div className="flex my-5 text-xl mt-2 font-extrabold">
               <p>TOTAL</p>
               <div className="mx-auto"></div>

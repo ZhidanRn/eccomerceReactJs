@@ -69,7 +69,7 @@ export default function HomePages() {
             <Header categoryVal={fetchCategories} searchRes={fetchSearch}/>
             <main className="max-w-7xl mx-auto min-h-screen overflow-hidden p-6">
 
-                <p className="text-5xl mb-5 capitalize" id="textAll">{title}</p>
+                <p className="text-5xl mb-5 capitalize mt-10" id="textAll">{title}</p>
                 <p className="mb-10">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo ullam obcaecati odit vero doloremque tenetur at modi quaerat repellendus dolores! Inventore quasi laboriosam amet, perspiciatis delectus earum ut natus voluptatem magnam. At consequuntur illo maiores. Sit hic itaque culpa libero eligendi repudiandae velit quaerat neque dignissimos quis doloribus, dolorum rem.
                 </p>
